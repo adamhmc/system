@@ -7,7 +7,7 @@ var ItemSchema = new Schema({
 	productName: String,
 	productPrice: Number,
 	note: String,
-	lastUpdatedDate: Date
+	lastUpdatedDate: { type: Date, default: Date.now }
 })
 
 
