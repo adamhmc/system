@@ -7,11 +7,13 @@ var bodyParser = require('body-parser');
 var mongoose   = require('mongoose');
 var routes = require('./routes/index');
 var items = require('./routes/items');
+var cors = require('cors');
 var app = express();
 
 // view engine setup
 app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'jade');
+app.use(cors());
 
 mongoose.connect('mongodb://adamhmc:test1234@ds019826.mlab.com:19826/itemdb').then(() =>  console.log('connection succesful'))
   .catch((err) => console.error(err)); // connect to our database
