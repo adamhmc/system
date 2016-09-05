@@ -5,7 +5,9 @@ var ItemSchema = new Schema({
 	companyId: String,
 	companyName: String, 
 	productName: String,
-	productPrice: Number
+	productPrice: Number,
+	note: String,
+	lastUpdatedDate: Date
 })
 
 
