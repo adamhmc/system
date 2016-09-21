@@ -15,7 +15,14 @@ app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'jade');
 app.use(cors());
 
-mongoose.connect('mongodb://adamhmc:test1234@ds019826.mlab.com:19826/itemdb').then(() =>  console.log('connection succesful'))
+var dbUser = process.env.dbUser;
+var dbPassword = process.env.dbPassword;
+var dbUrl = process.env.dbUrl;
+var dbTable = process.env.dbTable;
+
+
+mongoose.connect('mongodb://'+dbUser+':'+dbPassword+'@'+dbUrl+'/'+dbTable)
+.then(() =>  console.log('connection succesful!!'))
   .catch((err) => console.error(err)); // connect to our database
 
 
